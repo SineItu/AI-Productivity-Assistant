@@ -51,7 +51,7 @@ function Dashboard() {
       <div className="max-w-6xl mx-auto space-y-8">
         <header className="space-y-1">
           <h1 className="text-2xl font-semibold tracking-tight text-balance">
-            Good morning, Julian
+            Good morning
           </h1>
           <p className="text-sm text-muted-foreground max-w-[56ch] text-pretty">
             Four AI tools for the work that eats your calendar: writing, summarizing, planning and
