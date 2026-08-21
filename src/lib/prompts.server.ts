@@ -32,10 +32,10 @@ CONSTRAINTS:
 - Keep concise drafts under 150 words and detailed drafts under 300 words.
 - Do not add commentary before or after the email.`,
         prompt: block({
-          "Context and intent": fields.context ?? "",
-          Tone: fields.tone ?? "",
-          Audience: fields.audience ?? "",
-          Length: fields.length ?? "",
+          "Context and intent": fields["context"] ?? "",
+          Tone: fields["tone"] ?? "",
+          Audience: fields["audience"] ?? "",
+          Length: fields["length"] ?? "",
         }),
       };
     case "summary":
@@ -55,7 +55,7 @@ A markdown table with columns: Owner | Action | Deadline. Use "[unassigned]" or 
 ## Open Questions & Risks
 Bullets; omit nothing that was left unresolved.
 CONSTRAINTS: Only use information present in the notes. Preserve names and dates exactly as written.`,
-        prompt: block({ "Meeting notes / transcript": fields.notes ?? "" }),
+        prompt: block({ "Meeting notes / transcript": fields["notes"] ?? "" }),
       };
     case "planner":
       return {
@@ -74,10 +74,10 @@ Bullets for anything that should be dropped, deferred, or handed off, with a one
 Two or three concrete deep-work blocks with times.
 CONSTRAINTS: Never schedule beyond the stated capacity. Keep rationales to one short clause.`,
         prompt: block({
-          Tasks: fields.tasks ?? "",
-          "Planning horizon": fields.horizon ?? "",
-          "Working hours / capacity": fields.capacity ?? "",
-          "Stated priority or goal": fields.goal ?? "",
+          Tasks: fields["tasks"] ?? "",
+          "Planning horizon": fields["horizon"] ?? "",
+          "Working hours / capacity": fields["capacity"] ?? "",
+          "Stated priority or goal": fields["goal"] ?? "",
         }),
       };
     case "research":
@@ -96,9 +96,9 @@ Bullets on what this means for the reader's decisions.
 Bullets naming what should be verified with primary sources.
 CONSTRAINTS: Flag uncertainty explicitly with "Low confidence:" where relevant. Never fabricate citations, URLs, or statistics; if you reference a figure, describe it as approximate and note it needs verification.`,
         prompt: block({
-          Topic: fields.topic ?? "",
-          "Audience / purpose": fields.audience ?? "",
-          Depth: fields.depth ?? "",
+          Topic: fields["topic"] ?? "",
+          "Audience / purpose": fields["audience"] ?? "",
+          Depth: fields["depth"] ?? "",
         }),
       };
   }
